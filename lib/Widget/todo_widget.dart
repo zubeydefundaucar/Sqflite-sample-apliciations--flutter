@@ -39,7 +39,9 @@ class _MyAppState extends State<CreateTodoWidget> {
               if (widget.formkey.currentState!.validate()) {
                 if(widget.onSubmit2!=null)widget.onSubmit2!(widget.controller.text,);
                 else widget.onSubmit(widget.controller.text);
+                Navigator.pop(context);
               }
+              
             },
             child: Text("Ok"))
       ],

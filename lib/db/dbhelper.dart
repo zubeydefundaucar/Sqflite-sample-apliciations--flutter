@@ -56,11 +56,11 @@ create table $Tablename(
     return todos.map((todo) => Todo.fromSqfliteDatabase(todo)).toList();
   }
 
-  Future<List<Todo>> fetcbyid() async {
+  Future<List<Todo>> fetcbyid({required String id}) async {
     final database = await this.db;
-    final todos =
-        await database.rawQuery('''SELECT * from $Tablename  WHERE id= ?''');
-    return todos.map((todo) => Todo.fromSqfliteDatabase(todo)).toList();
+    final todo =
+        await database.rawQuery('''SELECT * from $Tablename  WHERE id= $id''');
+    return todo.map((todo) => Todo.fromSqfliteDatabase(todo)).toList();
   }
 
   Future<void> delete(int id) async {
