@@ -143,4 +143,4 @@ int getselectionstatus(List<bool> selected) {
       status += 1;
     }
   }
-  return status
+  return statu
